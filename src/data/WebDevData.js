@@ -1,24 +1,21 @@
 // File: src/data/WebDevData.js
 
-import bakasePic1 from "../assets/images/WebDev/bakasePic1.png";
-import bakasePic2 from "../assets/images/WebDev/bakasePic2.png";
-import todoPic1 from "../assets/images/WebDev/todoPic1.png";
-import todoPic2 from "../assets/images/WebDev/todoPic2.png";
-import cartrackingPic1 from "../assets/images/WebDev/cartrackingPic1.png";
-import cartrackingPic2 from "../assets/images/WebDev/cartrackingPic2.png";
-import cartrackingPic3 from "../assets/images/WebDev/cartrackingPic3.png";
-import cartrackingPic4 from "../assets/images/WebDev/cartrackingPic4.png";
-import portowpPic1 from "../assets/images/WebDev/portowpPic1.png";
-import portowpPic2 from "../assets/images/WebDev/portowpPic2.png";
-import portowpPic3 from "../assets/images/WebDev/portowpPic3.png";
-import otolensPic1 from "../assets/images/WebDev/otolensPic1.png";
-import otolensPic2 from "../assets/images/WebDev/otolensPic2.png";
-import otolensPic3 from "../assets/images/WebDev/otolensPic3.png";
-import otolensPic4 from "../assets/images/WebDev/otolensPic4.png";
-import otolensPic5 from "../assets/images/WebDev/otolensPic5.png";
-import porto1 from "../assets/images/WebDev/porto1.png";
-import porto2 from "../assets/images/WebDev/porto2.png";
-import porto3 from "../assets/images/WebDev/porto3.png";
+import bakasePic1 from "../assets/images/WebDev/bakasePic1.webp";
+import bakasePic2 from "../assets/images/WebDev/bakasePic2.webp";
+import todoPic1 from "../assets/images/WebDev/todoPic1.webp";
+import todoPic2 from "../assets/images/WebDev/todoPic2.webp";
+import cartrackingPic1 from "../assets/images/WebDev/cartrackingPic1.webp";
+import cartrackingPic2 from "../assets/images/WebDev/cartrackingPic2.webp";
+import cartrackingPic3 from "../assets/images/WebDev/cartrackingPic3.webp";
+import cartrackingPic4 from "../assets/images/WebDev/cartrackingPic4.webp";
+import portowpPic1 from "../assets/images/WebDev/portowpPic1.webp";
+import portowpPic2 from "../assets/images/WebDev/portowpPic2.webp";
+import portowpPic3 from "../assets/images/WebDev/portowpPic3.webp";
+import otolensPic1 from "../assets/images/WebDev/otolensPic1.webp";
+import otolensPic2 from "../assets/images/WebDev/otolensPic2.webp";
+import otolensPic3 from "../assets/images/WebDev/otolensPic3.webp";
+import otolensPic4 from "../assets/images/WebDev/otolensPic4.webp";
+import otolensPic5 from "../assets/images/WebDev/otolensPic5.webp";
 
 export const PROJECTS = [
   {

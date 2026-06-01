@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import darlenePic from "../assets/images/darl.png";
+import darlenePic from "../assets/images/darl.webp";
 
 const BG_IMAGE = darlenePic;
 

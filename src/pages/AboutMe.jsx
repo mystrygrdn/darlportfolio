@@ -3,7 +3,7 @@
 import { useRef, useEffect } from "react";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
-import darl1 from "../assets/images/darl1.JPG";
+import darl1 from "../assets/images/darl1.webp";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 

@@ -1,41 +1,41 @@
 // File: src/data/MultimediaData.js
 
-import ecmval from "../assets/images/Multimedia/ecmval.png";
-import ecmytc from "../assets/images/Multimedia/ecmytc.png";
+import ecmval from "../assets/images/Multimedia/ecmval.webp";
+import ecmytc from "../assets/images/Multimedia/ecmytc.webp";
 
-import ssENLC2 from "../assets/images/Multimedia/ssENLC2.png";
-import ssENLC3 from "../assets/images/Multimedia/ssENLC3.jpeg";
-import ssENLC4 from "../assets/images/Multimedia/ssENLC4.png";
-import bonsdag2025 from "../assets/images/Multimedia/bonsdag2025.png";
-import ytcENLC from "../assets/images/Multimedia/ytcENLC.png";
-import christmasENLC from "../assets/images/Multimedia/christmasENLC.png";
-import sstIKI from "../assets/images/Multimedia/sstIKI.jpeg";
-import doa10malam from "../assets/images/Multimedia/doa10malam.png";
+import ssENLC2 from "../assets/images/Multimedia/ssENLC2.webp";
+import ssENLC3 from "../assets/images/Multimedia/ssENLC3.webp";
+import ssENLC4 from "../assets/images/Multimedia/ssENLC4.webp";
+import bonsdag2025 from "../assets/images/Multimedia/bonsdag2025.webp";
+import ytcENLC from "../assets/images/Multimedia/ytcENLC.webp";
+import christmasENLC from "../assets/images/Multimedia/christmasENLC.webp";
+import sstIKI from "../assets/images/Multimedia/sstIKI.webp";
+import doa10malam from "../assets/images/Multimedia/doa10malam.webp";
 
-import bird from "../assets/images/Multimedia/bird.jpeg";
-import cat from "../assets/images/Multimedia/cat.jpeg";
-import blurry from "../assets/images/Multimedia/blurry.jpeg";
-import afterschool from "../assets/images/Multimedia/afterschool.jpeg";
-import basketball from "../assets/images/Multimedia/basketball.jpeg";
-import brotherhood from "../assets/images/Multimedia/brotherhood.jpeg";
-import crescent from "../assets/images/Multimedia/crescent.JPG";
-import cruelsummer from "../assets/images/Multimedia/cruelsummer.jpeg";
-import fullmoon from "../assets/images/Multimedia/fullmoon.jpeg";
-import swimming from "../assets/images/Multimedia/swimming.jpeg";
+import bird from "../assets/images/Multimedia/bird.webp";
+import cat from "../assets/images/Multimedia/cat.webp";
+import blurry from "../assets/images/Multimedia/blurry.webp";
+import afterschool from "../assets/images/Multimedia/afterschool.webp";
+import basketball from "../assets/images/Multimedia/basketball.webp";
+import brotherhood from "../assets/images/Multimedia/brotherhood.webp";
+import crescent from "../assets/images/Multimedia/crescent.webp";
+import cruelsummer from "../assets/images/Multimedia/cruelsummer.webp";
+import fullmoon from "../assets/images/Multimedia/fullmoon.webp";
+import swimming from "../assets/images/Multimedia/swimming.webp";
 
-import igp1 from "../assets/images/Multimedia/igp1.png";
-import igp2 from "../assets/images/Multimedia/igp2.png";
-import igp3 from "../assets/images/Multimedia/igp3.png";
-import igp4 from "../assets/images/Multimedia/igp4.png";
-import igp5 from "../assets/images/Multimedia/igp5.png";
-import igp6 from "../assets/images/Multimedia/igp6.png";
+import igp1 from "../assets/images/Multimedia/igp1.webp";
+import igp2 from "../assets/images/Multimedia/igp2.webp";
+import igp3 from "../assets/images/Multimedia/igp3.webp";
+import igp4 from "../assets/images/Multimedia/igp4.webp";
+import igp5 from "../assets/images/Multimedia/igp5.webp";
+import igp6 from "../assets/images/Multimedia/igp6.webp";
 
-import video1 from "../assets/images/Multimedia/video1.png";
-import video2 from "../assets/images/Multimedia/video2.png";
-import video3 from "../assets/images/Multimedia/video3.png";
-import video4 from "../assets/images/Multimedia/video4.png";
-import video5 from "../assets/images/Multimedia/video5.png";
-import video6 from "../assets/images/Multimedia/video6.png";
+import video1 from "../assets/images/Multimedia/video1.webp";
+import video2 from "../assets/images/Multimedia/video2.webp";
+import video3 from "../assets/images/Multimedia/video3.webp";
+import video4 from "../assets/images/Multimedia/video4.webp";
+import video5 from "../assets/images/Multimedia/video5.webp";
+import video6 from "../assets/images/Multimedia/video6.webp";
 
 export const SOCIAL_ITEMS = [
   {
