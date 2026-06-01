@@ -54,7 +54,6 @@ This portfolio features a curated collection of key projects I have developed:
 | **Core Framework** | React 19 / Vite |
 | **Styling & UI** | Tailwind CSS / Bootstrap / Modern Minimalist Design |
 | **Languages** | JavaScript (ES6+), HTML5, CSS3, PHP |
-| **Backend / Framework** | Laravel (Core Systems Interaction) |
 | **Methodology & Tools** | Rapid Application Development (RAD), Git/GitHub, Visual Verification Testing |
 | **Creative Suite** | Video Editing, Photography, Social Media Management, Figma |
 
