@@ -37,11 +37,15 @@ import video4 from "../assets/images/Multimedia/video4.webp";
 import video5 from "../assets/images/Multimedia/video5.webp";
 import video6 from "../assets/images/Multimedia/video6.webp";
 
+import idcard1 from "../assets/images/Multimedia/idcard1.png";
+import idcard2 from "../assets/images/Multimedia/idcard2.png";
+import idcard3 from "../assets/images/Multimedia/idcard3.png";
+
 export const SOCIAL_ITEMS = [
   {
     title: "ECM 2024 Valentine's Worship Night",
     image: ecmval,
-    desc: "A documentation of the ECM Valentine 2024 'God’s Unfailing Love' event, capturing the youth fellowship",
+    desc: "A documentation of the ECM Valentine 2024 'God's Unfailing Love' event, capturing the youth fellowship",
     link: "https://www.instagram.com/p/C3fcmZEvpEE/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==",
   },
   {
@@ -154,6 +158,25 @@ export const VIDEO_ITEMS = [
   },
 ];
 
+export const OTHERS_ITEMS = [
+  {
+    category: "ID Card & Lanyard Design",
+    title: "SMPN 2 Kalawat — 400+ Student ID Cards & Lanyards",
+    cover: idcard1,
+    thumbs: [idcard2, idcard3],
+    desc: "As part of the Kampus Mengajar Kalawat 24 program, I designed and produced over 400 student ID cards along with matching custom lanyards for SMP Negeri 2 Kalawat. The project was executed across 3 batches, each featuring personalized student photos, NISN, and full school branding. Both sides of every ID card were designed — the front displaying the student's identity and the school's visual identity, and the back showcasing the school's Visi & Misi. The lanyard was designed with the school name and a bold student-themed stripe pattern. All designs were crafted in Canva with meticulous attention to consistency and print-readiness.",
+    stats: [
+      { value: "400+", label: "ID Cards" },
+      { value: "3", label: "Batches" },
+      { value: "2", label: "Card Sides" },
+      { value: "1", label: "Lanyard Design" },
+    ],
+    tools: ["Canva", "SMPN 2 Kalawat Branding", "Kampus Mengajar Kalawat 2024"],
+    igLink:
+      "https://www.instagram.com/p/DEAJDOdJMs8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+  },
+];
+
 export const IG_PREVIEWS = [igp1, igp2, igp3, igp4, igp5, igp6];
 
 export const TABS = [
@@ -161,4 +184,5 @@ export const TABS = [
   { key: "social", label: "Social Media", icon: "campaign" },
   { key: "photo", label: "Photography", icon: "photo_camera" },
   { key: "video", label: "Videography", icon: "videocam" },
+  { key: "others", label: "Others", icon: "more_horiz" },
 ];
