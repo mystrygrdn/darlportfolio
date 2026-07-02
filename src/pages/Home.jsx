@@ -64,9 +64,6 @@ export default function Home() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
@@ -237,6 +234,8 @@ export default function Home() {
         src={BG_IMAGE}
         alt="Darlene S. Asalui portrait"
         className="home-bg"
+        fetchPriority="high"
+        decoding="async"
       />
 
       {/* Gradient overlay */}

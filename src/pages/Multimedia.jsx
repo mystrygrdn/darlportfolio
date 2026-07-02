@@ -203,9 +203,6 @@ export default function Multimedia() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { background-color: #0d0d14; color: #f1f0f7; font-family: 'Inter', sans-serif; overflow-x: hidden; letter-spacing: -0.01em; }
