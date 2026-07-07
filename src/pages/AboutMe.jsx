@@ -95,6 +95,11 @@ const CERTS = [
   },
   {
     icon: "code",
+    title: "Assistant Web Developer (Digital Talent Academy)",
+    sub: "by Digital Talent Scholarship (KOMDIGI)"
+  },
+  {
+    icon: "code",
     title: "#JuaraVibeCoding Participant",
     sub: "by GDG Live Indonesia and recognized as a Twibbon Challenge winner"
   }
