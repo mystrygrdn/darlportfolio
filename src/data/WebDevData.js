@@ -16,8 +16,30 @@ import otolensPic2 from "../assets/images/WebDev/otolensPic2.webp";
 import otolensPic3 from "../assets/images/WebDev/otolensPic3.webp";
 import otolensPic4 from "../assets/images/WebDev/otolensPic4.webp";
 import otolensPic5 from "../assets/images/WebDev/otolensPic5.webp";
+import POSPic1 from "../assets/images/WebDev/POSPic1.webp";
+import POSPic2 from "../assets/images/WebDev/POSPic2.webp";
+import POSPic3 from "../assets/images/WebDev/POSPic3.webp";
+import POSPic4 from "../assets/images/WebDev/POSPic4.webp"; 
 
 export const PROJECTS = [
+  {
+    year: "2026",
+    title: "Rajawali POS & Stok",
+    category: "POS and Inventory System for Toko Rajawali Tondano",
+    role: "Full-Stack Engineer — Designed the database architecture, built the role-scoped system, and packaged it as a native desktop application",
+    tech: [
+      "Laravel",
+      "NativePHP",
+      "Electron",
+      "Alpine.js",
+      "SQLite",
+      "VibeCoding",
+    ],
+    description:
+      "A native Windows desktop point-of-sale (POS) and inventory management system built to streamline stock tracking and sales for Toko Rajawali in Tondano. Packaged using NativePHP and Electron, it operates offline with a local SQLite database directly on the store's computer. The application features three role-scoped dashboards (Admin, Owner, Kitchen), a responsive real-time checkout grid with stock-aware validation, thermal-style receipt printing, and comprehensive reporting with custom Excel and PDF exports.",
+    github: "https://github.com/mystrygrdn/rajawaliPosdanStok.git",
+    images: [POSPic1, POSPic2, POSPic3, POSPic4],
+  },
   {
     year: "2026",
     title: "OtoLens",
