@@ -9,6 +9,10 @@ import darl1 from "../assets/images/darl1.webp";
 
 const IMAGE = darl1;
 
+// Taruh file CV kamu di folder `public/` (misalnya: public/resume-darlene-asalui.pdf)
+// supaya bisa diakses langsung lewat path ini tanpa perlu di-import.
+const RESUME_URL = "src/assets/webdev-resume.pdf";
+
 const CAREER = [
   {
     period: "JUN 2025 - Present",
@@ -291,8 +295,26 @@ export default function AboutMe() {
         }
         .am-hero-sub {
           animation-delay: .15s; font-size: 15.5px; line-height: 1.8;
-          color: rgba(255,255,255,0.55); max-width: 500px; margin-bottom: 40px;
+          color: rgba(255,255,255,0.55); max-width: 500px; margin-bottom: 32px;
         }
+
+        /* CTA row (Download CV, sits below the chips) */
+        .am-hero-actions { animation-delay: .22s; margin-top: 28px; }
+        .am-cta-btn {
+          display: inline-flex; align-items: center; gap: 10px;
+          padding: 13px 26px; border-radius: 9999px;
+          background: linear-gradient(135deg, #a78bfa 0%, #818cf8 100%);
+          color: #0d0d14; font-size: 13.5px; font-weight: 800;
+          letter-spacing: 0.02em; text-decoration: none;
+          box-shadow: 0 12px 28px rgba(129,140,248,0.28);
+          transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        .am-cta-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 16px 36px rgba(129,140,248,0.4);
+        }
+        .am-cta-btn .material-symbols-outlined { font-size: 18px; color: #0d0d14; }
+
         .am-chips { animation-delay: .2s; display: flex; flex-wrap: wrap; gap: 10px; }
         .am-chip {
           display: inline-flex; align-items: center; gap: 8px;
@@ -490,7 +512,10 @@ export default function AboutMe() {
 
           /* Title & sub smaller on phone */
           .am-hero-title { font-size: clamp(32px, 9vw, 48px); }
-          .am-hero-sub { font-size: 14px; margin-bottom: 28px; }
+          .am-hero-sub { font-size: 14px; margin-bottom: 24px; }
+
+          /* CTA button full-width on phone */
+          .am-cta-btn { width: 100%; justify-content: center; padding: 14px 22px; }
 
           /* Chips wrap fine, reduce padding */
           .am-chip { padding: 8px 14px; font-size: 11px; }
@@ -578,6 +603,7 @@ export default function AboutMe() {
                 structured, user-centric digital experiences through proactive
                 problem-solving and rapid adaptation.
               </p>
+
               <div className="am-chips">
                 <div className="am-chip">
                   <span className="material-symbols-outlined">location_on</span>
@@ -591,6 +617,17 @@ export default function AboutMe() {
                   <span className="material-symbols-outlined">school</span>
                   Bachelor of Computer Science
                 </div>
+              </div>
+
+              <div className="am-hero-actions">
+                <a
+                  href={RESUME_URL}
+                  download="Darlene-Asalui-CV.pdf"
+                  className="am-cta-btn"
+                >
+                  <span className="material-symbols-outlined">download</span>
+                  Download CV
+                </a>
               </div>
             </div>
           </section>
