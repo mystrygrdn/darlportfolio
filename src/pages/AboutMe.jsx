@@ -11,7 +11,7 @@ const IMAGE = darl1;
 
 // Taruh file CV kamu di folder `public/` (misalnya: public/resume-darlene-asalui.pdf)
 // supaya bisa diakses langsung lewat path ini tanpa perlu di-import.
-const RESUME_URL = "src/assets/webdev-resume.pdf";
+const RESUME_URL = "/webdev-resume.pdf";
 
 const CAREER = [
   {
