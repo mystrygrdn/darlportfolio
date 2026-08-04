@@ -238,13 +238,14 @@ export default function AboutMe() {
 
         /* ── Hero ── */
         .am-hero {
-          padding-top: 180px; padding-bottom: 100px;
-          display: grid; grid-template-columns: 0.9fr 1.1fr;
-          gap: 72px; align-items: center;
+          padding-top: 172px; padding-bottom: 64px;
+          display: grid; grid-template-columns: 0.85fr 1.15fr;
+          gap: 56px; align-items: center;
+          min-height: calc(100vh - 90px);
         }
 
         /* Portrait */
-        .am-portrait-wrap { position: relative; }
+        .am-portrait-wrap { position: relative; max-width: 380px; justify-self: center; width: 100%; }
         .am-portrait-glow {
           position: absolute; inset: -24px; border-radius: 2rem;
           background: rgba(167,139,250,0.07); filter: blur(48px);
@@ -281,25 +282,25 @@ export default function AboutMe() {
         .am-eyebrow {
           animation-delay: .05s; font-size: 11px; font-weight: 800;
           letter-spacing: 0.2em; text-transform: uppercase;
-          color: #a78bfa; margin-bottom: 20px; display: block;
+          color: #a78bfa; margin-bottom: 18px; display: block;
         }
         .am-hero-title {
           animation-delay: .1s;
-          font-size: clamp(36px, 5.5vw, 72px);
+          font-size: clamp(34px, 4.8vw, 64px);
           font-weight: 900; line-height: 1.06;
-          letter-spacing: -0.04em; color: #fff; margin-bottom: 24px;
+          letter-spacing: -0.04em; color: #fff; margin-bottom: 20px;
         }
         .am-hero-title span {
           background: linear-gradient(135deg, #c4b5fd 0%, #818cf8 100%);
           -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
         .am-hero-sub {
-          animation-delay: .15s; font-size: 15.5px; line-height: 1.8;
-          color: rgba(255,255,255,0.55); max-width: 500px; margin-bottom: 32px;
+          animation-delay: .15s; font-size: 15px; line-height: 1.75;
+          color: rgba(255,255,255,0.55); max-width: 500px; margin-bottom: 26px;
         }
 
         /* CTA row (Download CV, sits below the chips) */
-        .am-hero-actions { animation-delay: .22s; margin-top: 28px; }
+        .am-hero-actions { animation-delay: .22s; margin-top: 22px; }
         .am-cta-btn {
           display: inline-flex; align-items: center; gap: 10px;
           padding: 13px 26px; border-radius: 9999px;
@@ -458,7 +459,8 @@ export default function AboutMe() {
         ════════════════════════════════════════ */
         @media (max-width: 1024px) {
           .am-wrap { padding: 0 32px; }
-          .am-hero { grid-template-columns: 1fr 1.3fr; gap: 48px; padding-top: 140px; padding-bottom: 80px; }
+          .am-hero { grid-template-columns: 0.8fr 1.2fr; gap: 44px; padding-top: 148px; padding-bottom: 56px; }
+          .am-portrait-wrap { max-width: 340px; }
           .am-mid-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
           .am-edu-cert-grid { gap: 48px; }
         }
@@ -472,11 +474,12 @@ export default function AboutMe() {
           /* Hero — portrait on top, bio below */
           .am-hero {
             grid-template-columns: 1fr;
-            padding-top: 100px;
-            padding-bottom: 60px;
-            gap: 40px;
+            padding-top: 108px;
+            padding-bottom: 56px;
+            gap: 36px;
+            min-height: auto;
           }
-          .am-portrait-frame { max-width: 320px; margin: 0 auto; }
+          .am-portrait-wrap { max-width: 300px; margin: 0 auto; }
           .am-portrait-badge { left: 0; bottom: 16px; }
 
           /* Both grids go single column */
@@ -502,8 +505,8 @@ export default function AboutMe() {
           .am-wrap { padding: 0 16px; }
 
           /* Hero */
-          .am-hero { padding-top: 90px; gap: 32px; }
-          .am-portrait-frame { max-width: 100%; }
+          .am-hero { padding-top: 92px; padding-bottom: 44px; gap: 28px; }
+          .am-portrait-wrap { max-width: 100%; }
           .am-portrait-badge {
             left: 50%; transform: translateX(-50%);
             bottom: -18px; width: max-content;

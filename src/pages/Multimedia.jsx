@@ -222,15 +222,15 @@ export default function Multimedia() {
         .mm-wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
         /* ── Hero ── */
-        .mm-hero { padding-top: 180px; padding-bottom: 64px; display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 60px; }
+        .mm-hero { padding-top: 176px; padding-bottom: 64px; display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 56px; min-height: calc(100vh - 90px); }
         .mm-hero-content { display: flex; flex-direction: column; }
         .mm-hero-content > * { animation: fadeInUp .7s cubic-bezier(.16,1,.3,1) backwards; }
         .mm-hero-eyebrow { animation-delay:.05s; font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #a78bfa; margin-bottom: 20px; }
-        .mm-hero-title { animation-delay:.1s; font-size: clamp(40px, 6vw, 84px); font-weight: 900; line-height: 1.05; letter-spacing: -.04em; color: #fff; margin-bottom: 24px; }
+        .mm-hero-title { animation-delay:.1s; font-size: clamp(38px, 5.4vw, 74px); font-weight: 900; line-height: 1.06; letter-spacing: -.04em; color: #fff; margin-bottom: 24px; }
         .mm-hero-title span { background: linear-gradient(135deg,#c4b5fd 0%,#818cf8 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-        .mm-hero-sub { animation-delay:.15s; font-size: 16px; line-height: 1.75; color: rgba(255,255,255,.5); max-width: 480px; }
+        .mm-hero-sub { animation-delay:.15s; font-size: 16px; line-height: 1.75; color: rgba(255,255,255,.5); max-width: 460px; }
 
-        .mm-hero-visual { position: relative; height: 420px; display: flex; align-items: center; justify-content: center; animation: fadeInUp 1s cubic-bezier(.16,1,.3,1) backwards; animation-delay: .25s; }
+        .mm-hero-visual { position: relative; height: 400px; display: flex; align-items: center; justify-content: center; animation: fadeInUp 1s cubic-bezier(.16,1,.3,1) backwards; animation-delay: .25s; }
         .mm-glow-orb { position: absolute; border-radius: 50%; filter: blur(60px); pointer-events:none; }
         .mm-orb1 { width: 220px; height: 220px; background: rgba(139,92,246,.28); top:5%; right:10%; animation: pulseGlow 6s infinite alternate; }
         .mm-orb2 { width: 180px; height: 180px; background: rgba(99,102,241,.22); bottom:5%; left:10%; animation: pulseGlow 8s infinite alternate-reverse; }
@@ -542,7 +542,7 @@ export default function Multimedia() {
         ════════════════════════════════════════ */
         @media (max-width: 1024px) {
           .mm-wrap { padding: 0 32px; }
-          .mm-hero { gap: 48px; padding-top: 150px; }
+          .mm-hero { gap: 44px; padding-top: 150px; }
           .mm-video-grid  { columns: 2; }
           .mm-poster-grid { columns: 2; }
           .mm-photo-grid  { columns: 3; }
@@ -551,7 +551,7 @@ export default function Multimedia() {
 
         @media (max-width: 768px) {
           .mm-wrap { padding: 0 24px; }
-          .mm-hero { grid-template-columns: 1fr; padding-top: 110px; padding-bottom: 40px; gap: 40px; }
+          .mm-hero { grid-template-columns: 1fr; padding-top: 108px; padding-bottom: 40px; gap: 40px; min-height: auto; }
           .mm-hero-sub { max-width: 100%; }
           .mm-hero-visual { height: 300px; }
           .mm-video-mock  { width: 220px; height: 140px; }
@@ -571,7 +571,7 @@ export default function Multimedia() {
 
         @media (max-width: 480px) {
           .mm-wrap { padding: 0 16px; }
-          .mm-hero { grid-template-columns: 1fr; padding-top: 90px; padding-bottom: 28px; gap: 0; }
+          .mm-hero { grid-template-columns: 1fr; padding-top: 88px; padding-bottom: 28px; gap: 0; }
           .mm-hero-visual { display: none; }
           .mm-hero-title  { font-size: clamp(36px, 10vw, 52px); margin-bottom: 16px; }
           .mm-hero-sub    { font-size: 14.5px; }
@@ -604,7 +604,7 @@ export default function Multimedia() {
 
         @media (max-width: 360px) {
           .mm-wrap  { padding: 0 12px; }
-          .mm-hero  { padding-top: 80px; }
+          .mm-hero  { padding-top: 72px; }
           .mm-hero-title { font-size: 32px; }
           .mm-tab   { padding: 8px 12px; font-size: 12px; }
           .mm-poster-grid { columns: 1; }
