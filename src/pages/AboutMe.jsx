@@ -13,6 +13,14 @@ const IMAGE = darl1;
 // supaya bisa diakses langsung lewat path ini tanpa perlu di-import.
 const RESUME_URL = "/webdev-resume.pdf";
 
+// Tips logo:
+// - Kalau kamu punya file logo perusahaan/kampus/sekolah, import di atas
+//   (contoh: import bpsLogo from "../assets/logos/bps.png") lalu isi field
+//   `logo: bpsLogo` di data di bawah.
+// - Kalau field `logo` dikosongkan/undefined, komponen otomatis membuat
+//   avatar bulat berisi inisial dari `logoAlt` sebagai fallback, jadi
+//   tampilan tetap rapi walau belum ada asetnya.
+
 const CAREER = [
   {
     period: "JUN 2025 - Present",
@@ -20,6 +28,8 @@ const CAREER = [
     title: "Admin",
     place: "FocusAuto Repair Shop · Part-time Remote",
     desc: "Created and Managed transaction invoices, also managed vendor profile on INAPROC (Indonesia's government procurement portal) website",
+    logo: "src/assets/images/AboutMe/focusauto.webp",
+    logoAlt: "FocusAuto Repair Shop",
   },
   {
     period: "JAN 2025 - FEB 2025",
@@ -27,6 +37,8 @@ const CAREER = [
     title: "Finance Team Member",
     place: "Badan Pusat Statistik Prov. Sulawesi Utara · Internship",
     desc: "File Archiving and Document Imaging",
+    logo: "src/assets/images/AboutMe/bps.webp",
+    logoAlt: "Badan Pusat Statistik",
   },
   {
     period: "SEP 2024 - DEC 2024",
@@ -34,6 +46,8 @@ const CAREER = [
     title: "Informatics Teacher",
     place: "SMPN 2 Kalawat · Kampus Mengajar Program",
     desc: "Grade 7 Informatics Teacher, PBL Wix Team Mentor, Speaker at the Students - SC Seminars and Designer of SPENDUK Student ID Cards.",
+    logo: "src/assets/images/AboutMe/spenduk.webp",
+    logoAlt: "SMPN 2 Kalawat",
   },
 ];
 
@@ -44,6 +58,8 @@ const EDUCATION = [
     title: "Bachelor of Computer Science",
     place: "Universitas Sam Ratulangi · FMIPA (Information Systems)",
     desc: "Graduated with honors (GPA 3.98), focusing on web development. Participant in Innovillage 2023, PKM-PI 2024, GEMASTIK 2024 (Software Development), and the Kampus Mengajar Program 2024.",
+    logo: "src/assets/images/AboutMe/unsrat.webp",
+    logoAlt: "Universitas Sam Ratulangi",
   },
   {
     period: "2019 - 2022",
@@ -51,6 +67,8 @@ const EDUCATION = [
     title: "Senior High School",
     place: "Sekolah Dian Harapan Manado (SDH) · Science Major",
     desc: "A hardworking student who graduated with a 90/100 average. Beyond building a strong foundation in computing, high school was where I discovered my creative talents in multimedia, photography, editing, and music, also served as Head of Academic Excellence in the Student Council.",
+    logo: "src/assets/images/AboutMe/sdh.webp",
+    logoAlt: "Sekolah Dian Harapan Manado",
   },
 ];
 
@@ -86,27 +104,42 @@ const CERTS = [
     icon: "code",
     title: "WordPress Development Bootcamp",
     sub: "by Special Skill Indonesia and awarded as best student (ranked top 3) for outstanding performance throughout the bootcamp.",
+    logo: "src/assets/images/AboutMe/specialskills.webp",
+    logoAlt: "Special Skill Indonesia",
+    certUrl: null,
   },
   {
     icon: "code",
     title: "Web Development 15.0",
     sub: "by Dibimbing",
+    logo: "src/assets/images/AboutMe/dibimbing.webp",
+    logoAlt: "Dibimbing",
+    certUrl: null,
   },
   {
     icon: "code",
     title: "Intro to Software Engineering",
     sub: "by RevoU",
+    logo: "src/assets/images/AboutMe/revoU.webp",
+    logoAlt: "RevoU",
+    certUrl: null,
   },
   {
     icon: "code",
     title: "Assistant Web Developer (Digital Talent Academy)",
-    sub: "by Digital Talent Scholarship (KOMDIGI)"
+    sub: "by Digital Talent Scholarship (KOMDIGI)",
+    logo: "src/assets/images/AboutMe/digitalent.webp",
+    logoAlt: "Digital Talent Scholarship",
+    certUrl: null,
   },
   {
     icon: "code",
     title: "#JuaraVibeCoding Participant",
-    sub: "by GDG Live Indonesia and recognized as a Twibbon Challenge winner"
-  }
+    sub: "by GDG Live Indonesia and recognized as a Twibbon Challenge winner",
+    logo: "src/assets/images/AboutMe/googledevelopers.webp",
+    logoAlt: "GDG Live Indonesia",
+    certUrl: null,
+  },
 ];
 
 const SOCIAL_LOGOS = {
@@ -194,6 +227,34 @@ const SOCIALS = [
     ctaIcon: "send",
   },
 ];
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+
+// Bulatan avatar untuk perusahaan/kampus/sekolah/penerbit sertifikat.
+// Kalau `src` ada, tampilkan gambar. Kalau tidak, tampilkan inisial dari `alt`
+// di atas lingkaran gradient supaya layout tetap konsisten walau logo belum ada.
+function EntityLogo({ src, alt = "", className = "" }) {
+  if (src) {
+    return (
+      <div className={`am-entity-logo ${className}`}>
+        <img src={src} alt={alt} />
+      </div>
+    );
+  }
+  const initials =
+    alt
+      .split(" ")
+      .filter(Boolean)
+      .slice(0, 2)
+      .map((w) => w[0])
+      .join("")
+      .toUpperCase() || "?";
+  return (
+    <div className={`am-entity-logo am-entity-logo-fallback ${className}`}>
+      <span>{initials}</span>
+    </div>
+  );
+}
 
 // ── Component ────────────────────────────────────────────────────────────────
 
@@ -299,34 +360,37 @@ export default function AboutMe() {
           color: rgba(255,255,255,0.55); max-width: 500px; margin-bottom: 26px;
         }
 
-        /* CTA row (Download CV, sits below the chips) */
-        .am-hero-actions { animation-delay: .22s; margin-top: 22px; }
+        /* Info grid — the 3 chips + Download CV button as one clean 2×2 grid.
+           Every cell is the same width/height, so nothing overflows or reads
+           as a ragged row of mismatched pills. */
+        .am-info-grid {
+          animation-delay: .2s; margin-top: 26px;
+          display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+        }
+        .am-chip, .am-cta-btn {
+          display: flex; align-items: center; justify-content: center; gap: 8px;
+          width: 100%; padding: 13px 16px; border-radius: 9999px;
+          font-size: 12px; font-weight: 800; letter-spacing: 0.08em;
+          text-transform: uppercase; text-decoration: none;
+          transition: all 0.3s cubic-bezier(0.4,0,0.2,1); text-align: center;
+        }
+        .am-chip {
+          background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+          color: rgba(255,255,255,0.8); cursor: default; white-space: nowrap; overflow: hidden;
+        }
+        .am-chip:hover { border-color: rgba(167,139,250,0.4); background: rgba(167,139,250,0.06); color: #c4b5fd; }
+        .am-chip .material-symbols-outlined { font-size: 15px; color: #a78bfa; flex-shrink: 0; }
+
         .am-cta-btn {
-          display: inline-flex; align-items: center; gap: 10px;
-          padding: 13px 26px; border-radius: 9999px;
           background: linear-gradient(135deg, #a78bfa 0%, #818cf8 100%);
-          color: #0d0d14; font-size: 13.5px; font-weight: 800;
-          letter-spacing: 0.02em; text-decoration: none;
+          color: #0d0d14; letter-spacing: 0.02em;
           box-shadow: 0 12px 28px rgba(129,140,248,0.28);
-          transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
         }
         .am-cta-btn:hover {
           transform: translateY(-2px);
           box-shadow: 0 16px 36px rgba(129,140,248,0.4);
         }
         .am-cta-btn .material-symbols-outlined { font-size: 18px; color: #0d0d14; }
-
-        .am-chips { animation-delay: .2s; display: flex; flex-wrap: wrap; gap: 10px; }
-        .am-chip {
-          display: inline-flex; align-items: center; gap: 8px;
-          padding: 9px 18px; border-radius: 9999px;
-          background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
-          font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
-          text-transform: uppercase; color: rgba(255,255,255,0.8);
-          transition: all 0.35s cubic-bezier(0.4,0,0.2,1); cursor: default;
-        }
-        .am-chip:hover { border-color: rgba(167,139,250,0.4); background: rgba(167,139,250,0.06); color: #c4b5fd; }
-        .am-chip .material-symbols-outlined { font-size: 15px; color: #a78bfa; }
 
         /* ── Section Shared ── */
         .am-section { margin-bottom: 80px; }
@@ -340,6 +404,23 @@ export default function AboutMe() {
           letter-spacing: -0.025em; color: #fff; margin-bottom: 40px;
         }
         .am-divider { width: 100%; height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 80px; }
+
+        /* ── Entity logo (career / education / certification) ── */
+        .am-entity-logo {
+          width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+          overflow: hidden; background: #fff;
+          border: 1px solid rgba(255,255,255,0.12);
+          box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+          display: flex; align-items: center; justify-content: center;
+        }
+        .am-entity-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .am-entity-logo-fallback {
+          background: linear-gradient(135deg, rgba(167,139,250,0.35), rgba(129,140,248,0.35));
+          border: 1px solid rgba(167,139,250,0.4);
+        }
+        .am-entity-logo-fallback span {
+          font-size: 14px; font-weight: 800; letter-spacing: 0.02em; color: #fff;
+        }
 
         /* ── Career & Skills Grid ── */
         .am-mid-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 64px; }
@@ -356,6 +437,7 @@ export default function AboutMe() {
         .am-tl-dot.past { background: #0d0d14; border: 1.5px solid rgba(255,255,255,0.2); }
         .am-tl-dot.edu { background: #0d0d14; border: 1.5px solid rgba(99,179,237,0.5); }
         .am-tl-card {
+          display: flex; align-items: flex-start; gap: 16px;
           background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06);
           border-radius: 16px; padding: 20px 22px;
           transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
@@ -365,6 +447,7 @@ export default function AboutMe() {
           box-shadow: 0 16px 32px rgba(0,0,0,0.2); transform: translateX(4px);
         }
         .am-tl-card.edu:hover { border-color: rgba(99,179,237,0.25); }
+        .am-tl-body { min-width: 0; flex: 1; }
         .am-tl-period { font-size: 10.5px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 6px; display: block; }
         .am-tl-period.active { color: #a78bfa; }
         .am-tl-period.past { color: rgba(255,255,255,0.3); }
@@ -402,25 +485,28 @@ export default function AboutMe() {
         /* Certifications */
         .am-cert-list { display: flex; flex-direction: column; gap: 14px; }
         .am-cert-card {
-          display: flex; align-items: flex-start; gap: 18px; padding: 20px 22px;
+          display: flex; align-items: flex-start; gap: 16px; padding: 20px 22px;
           border-radius: 16px; background: rgba(255,255,255,0.025);
-          border: 1px solid rgba(255,255,255,0.06); text-decoration: none;
+          border: 1px solid rgba(255,255,255,0.06);
           transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
         }
         .am-cert-card:hover {
           border-color: rgba(167,139,250,0.35); background: rgba(167,139,250,0.04);
           transform: translateY(-3px); box-shadow: 0 16px 32px rgba(0,0,0,0.2);
         }
-        .am-cert-icon {
-          width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
-          background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.2);
-          display: flex; align-items: center; justify-content: center;
-          transition: background 0.25s;
-        }
-        .am-cert-card:hover .am-cert-icon { background: rgba(167,139,250,0.2); }
-        .am-cert-icon .material-symbols-outlined { font-size: 20px; color: #a78bfa; }
+        .am-cert-body { flex: 1; min-width: 0; }
         .am-cert-title { font-size: 13.5px; font-weight: 700; color: #fff; margin-bottom: 4px; }
         .am-cert-sub { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.5; }
+        .am-cert-footer {
+          display: flex; justify-content: flex-end; margin-top: 12px;
+        }
+        .am-cert-link {
+          display: inline-flex; align-items: center; gap: 6px;
+          font-size: 12px; font-weight: 700; color: #a78bfa;
+          text-decoration: none; transition: all 0.25s;
+        }
+        .am-cert-link:hover { color: #c4b5fd; gap: 9px; }
+        .am-cert-link .material-symbols-outlined { font-size: 15px; }
 
         /* ── Social / Contact ── */
         .am-social-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -517,11 +603,10 @@ export default function AboutMe() {
           .am-hero-title { font-size: clamp(32px, 9vw, 48px); }
           .am-hero-sub { font-size: 14px; margin-bottom: 24px; }
 
-          /* CTA button full-width on phone */
-          .am-cta-btn { width: 100%; justify-content: center; padding: 14px 22px; }
-
-          /* Chips wrap fine, reduce padding */
-          .am-chip { padding: 8px 14px; font-size: 11px; }
+          /* On phones, drop to a single column so every pill/button is
+             full-width and stacked, instead of a cramped 2×2 grid */
+          .am-info-grid { grid-template-columns: 1fr; gap: 10px; }
+          .am-chip, .am-cta-btn { padding: 12px 16px; font-size: 11px; }
 
           /* Section */
           .am-section { margin-bottom: 48px; }
@@ -532,16 +617,17 @@ export default function AboutMe() {
           .am-timeline { padding-left: 28px; gap: 16px; }
           .am-tl-line { left: 5px; }
           .am-tl-dot { left: -28px; width: 11px; height: 11px; top: 8px; }
-          .am-tl-card { padding: 16px 18px; }
+          .am-tl-card { padding: 16px 18px; gap: 12px; }
           .am-tl-title { font-size: 15px; }
           .am-tl-desc { font-size: 12.5px; }
+          .am-entity-logo { width: 36px; height: 36px; }
+          .am-entity-logo-fallback span { font-size: 12px; }
 
           /* Skills tags smaller */
           .am-skill-tag { font-size: 11.5px; padding: 5px 12px; }
 
           /* Cert cards stacked */
-          .am-cert-card { padding: 16px 18px; gap: 14px; }
-          .am-cert-icon { width: 40px; height: 40px; flex-shrink: 0; }
+          .am-cert-card { padding: 16px 18px; gap: 12px; }
 
           /* Social cards — full width on phone */
           .am-social-grid { grid-template-columns: 1fr; }
@@ -557,7 +643,7 @@ export default function AboutMe() {
         @media (max-width: 360px) {
           .am-wrap { padding: 0 14px; }
           .am-hero-title { font-size: 28px; }
-          .am-chip { font-size: 10px; padding: 7px 12px; }
+          .am-chip { font-size: 10px; padding: 9px 12px; }
           .am-chips { gap: 8px; }
           .am-tl-card { padding: 14px 16px; }
           .am-social-handle { font-size: 13.5px; }
@@ -607,7 +693,7 @@ export default function AboutMe() {
                 problem-solving and rapid adaptation.
               </p>
 
-              <div className="am-chips">
+              <div className="am-info-grid">
                 <div className="am-chip">
                   <span className="material-symbols-outlined">location_on</span>
                   Manado, Indonesia
@@ -620,9 +706,6 @@ export default function AboutMe() {
                   <span className="material-symbols-outlined">school</span>
                   Bachelor of Computer Science
                 </div>
-              </div>
-
-              <div className="am-hero-actions">
                 <a
                   href={RESUME_URL}
                   download="Darlene-Asalui-CV.pdf"
@@ -651,14 +734,17 @@ export default function AboutMe() {
                         className={`am-tl-dot ${c.active ? "active" : "past"}`}
                       />
                       <div className="am-tl-card">
-                        <span
-                          className={`am-tl-period ${c.active ? "active" : "past"}`}
-                        >
-                          {c.period}
-                        </span>
-                        <h3 className="am-tl-title">{c.title}</h3>
-                        <span className="am-tl-place">{c.place}</span>
-                        <p className="am-tl-desc">{c.desc}</p>
+                        <EntityLogo src={c.logo} alt={c.logoAlt} />
+                        <div className="am-tl-body">
+                          <span
+                            className={`am-tl-period ${c.active ? "active" : "past"}`}
+                          >
+                            {c.period}
+                          </span>
+                          <h3 className="am-tl-title">{c.title}</h3>
+                          <span className="am-tl-place">{c.place}</span>
+                          <p className="am-tl-desc">{c.desc}</p>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -719,10 +805,13 @@ export default function AboutMe() {
                     <div key={i} className="am-tl-item">
                       <div className="am-tl-dot edu" />
                       <div className="am-tl-card edu">
-                        <span className="am-tl-period edu">{e.period}</span>
-                        <h3 className="am-tl-title">{e.title}</h3>
-                        <span className="am-tl-place edu">{e.place}</span>
-                        <p className="am-tl-desc">{e.desc}</p>
+                        <EntityLogo src={e.logo} alt={e.logoAlt} />
+                        <div className="am-tl-body">
+                          <span className="am-tl-period edu">{e.period}</span>
+                          <h3 className="am-tl-title">{e.title}</h3>
+                          <span className="am-tl-place edu">{e.place}</span>
+                          <p className="am-tl-desc">{e.desc}</p>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -734,23 +823,28 @@ export default function AboutMe() {
                 <h2 className="am-sec-title">Certifications & Programs</h2>
                 <div className="am-cert-list">
                   {CERTS.map((c, i) => (
-                    <a
-                      key={i}
-                      href={c.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="am-cert-card"
-                    >
-                      <div className="am-cert-icon">
-                        <span className="material-symbols-outlined">
-                          {c.icon}
-                        </span>
-                      </div>
-                      <div>
+                    <div key={i} className="am-cert-card">
+                      <EntityLogo src={c.logo} alt={c.logoAlt} />
+                      <div className="am-cert-body">
                         <div className="am-cert-title">{c.title}</div>
                         <div className="am-cert-sub">{c.sub}</div>
+                        {c.certUrl && (
+                          <div className="am-cert-footer">
+                            <a
+                              href={c.certUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="am-cert-link"
+                            >
+                              View Certificate
+                              <span className="material-symbols-outlined">
+                                arrow_outward
+                              </span>
+                            </a>
+                          </div>
+                        )}
                       </div>
-                    </a>
+                    </div>
                   ))}
                 </div>
               </div>
