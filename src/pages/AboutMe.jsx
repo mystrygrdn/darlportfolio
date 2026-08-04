@@ -106,7 +106,7 @@ const CERTS = [
     sub: "by Special Skill Indonesia and awarded as best student (ranked top 3) for outstanding performance throughout the bootcamp.",
     logo: "src/assets/images/AboutMe/specialskills.webp",
     logoAlt: "Special Skill Indonesia",
-    certUrl: null,
+    certUrl: "https://drive.google.com/file/d/1vhrpGRJbvhtLgNS4t4Hr5rIhM3QiGAvB/view?usp=sharing",
   },
   {
     icon: "code",
@@ -114,7 +114,7 @@ const CERTS = [
     sub: "by Dibimbing",
     logo: "src/assets/images/AboutMe/dibimbing.webp",
     logoAlt: "Dibimbing",
-    certUrl: null,
+    certUrl: "https://drive.google.com/file/d/1H4GtuKaFx1ILXrVsCDG3389NllOFUjp8/view?usp=sharing",
   },
   {
     icon: "code",
@@ -122,7 +122,7 @@ const CERTS = [
     sub: "by RevoU",
     logo: "src/assets/images/AboutMe/revoU.webp",
     logoAlt: "RevoU",
-    certUrl: null,
+    certUrl: "https://drive.google.com/file/d/1m5H5JUfuS46qf18EXv3tddqzlnDx3zzO/view?usp=sharing",
   },
   {
     icon: "code",
@@ -130,7 +130,7 @@ const CERTS = [
     sub: "by Digital Talent Scholarship (KOMDIGI)",
     logo: "src/assets/images/AboutMe/digitalent.webp",
     logoAlt: "Digital Talent Scholarship",
-    certUrl: null,
+    certUrl: "https://drive.google.com/file/d/10U5zyKxAty1zyZDMVkhXdjwfyewrZymU/view?usp=sharing",
   },
   {
     icon: "code",
@@ -138,7 +138,7 @@ const CERTS = [
     sub: "by GDG Live Indonesia and recognized as a Twibbon Challenge winner",
     logo: "src/assets/images/AboutMe/googledevelopers.webp",
     logoAlt: "GDG Live Indonesia",
-    certUrl: null,
+    certUrl: "https://drive.google.com/file/d/1uio9pDGYlkZKsmstdu1BKiizOIso2PMB/view?usp=sharing",
   },
 ];
 
