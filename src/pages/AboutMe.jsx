@@ -4,6 +4,16 @@ import { useRef, useEffect } from "react";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
 import darl1 from "../assets/images/darl1.webp";
+import focusautoLogo from "../assets/images/AboutMe/focusauto.webp";
+import bpsLogo from "../assets/images/AboutMe/bps.webp";
+import spendukLogo from "../assets/images/AboutMe/spenduk.webp";
+import unsratLogo from "../assets/images/AboutMe/unsrat.webp";
+import sdhLogo from "../assets/images/AboutMe/sdh.webp";
+import specialskillsLogo from "../assets/images/AboutMe/specialskills.webp";
+import dibimbingLogo from "../assets/images/AboutMe/dibimbing.webp";
+import revouLogo from "../assets/images/AboutMe/revou.webp";
+import digitalentLogo from "../assets/images/AboutMe/digitalent.webp";
+import googledevelopersLogo from "../assets/images/AboutMe/googledevelopers.webp";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 
@@ -28,7 +38,7 @@ const CAREER = [
     title: "Admin",
     place: "FocusAuto Repair Shop · Part-time Remote",
     desc: "Created and Managed transaction invoices, also managed vendor profile on INAPROC (Indonesia's government procurement portal) website",
-    logo: "src/assets/images/AboutMe/focusauto.webp",
+    logo: focusautoLogo,
     logoAlt: "FocusAuto Repair Shop",
   },
   {
@@ -37,7 +47,7 @@ const CAREER = [
     title: "Finance Team Member",
     place: "Badan Pusat Statistik Prov. Sulawesi Utara · Internship",
     desc: "File Archiving and Document Imaging",
-    logo: "src/assets/images/AboutMe/bps.webp",
+    logo: bpsLogo,
     logoAlt: "Badan Pusat Statistik",
   },
   {
@@ -46,7 +56,7 @@ const CAREER = [
     title: "Informatics Teacher",
     place: "SMPN 2 Kalawat · Kampus Mengajar Program",
     desc: "Grade 7 Informatics Teacher, PBL Wix Team Mentor, Speaker at the Students - SC Seminars and Designer of SPENDUK Student ID Cards.",
-    logo: "src/assets/images/AboutMe/spenduk.webp",
+    logo: spendukLogo,
     logoAlt: "SMPN 2 Kalawat",
   },
 ];
@@ -58,7 +68,7 @@ const EDUCATION = [
     title: "Bachelor of Computer Science",
     place: "Universitas Sam Ratulangi · FMIPA (Information Systems)",
     desc: "Graduated with honors (GPA 3.98), focusing on web development. Participant in Innovillage 2023, PKM-PI 2024, GEMASTIK 2024 (Software Development), and the Kampus Mengajar Program 2024.",
-    logo: "src/assets/images/AboutMe/unsrat.webp",
+    logo: unsratLogo,
     logoAlt: "Universitas Sam Ratulangi",
   },
   {
@@ -67,7 +77,7 @@ const EDUCATION = [
     title: "Senior High School",
     place: "Sekolah Dian Harapan Manado (SDH) · Science Major",
     desc: "A hardworking student who graduated with a 90/100 average. Beyond building a strong foundation in computing, high school was where I discovered my creative talents in multimedia, photography, editing, and music, also served as Head of Academic Excellence in the Student Council.",
-    logo: "src/assets/images/AboutMe/sdh.webp",
+    logo: sdhLogo,
     logoAlt: "Sekolah Dian Harapan Manado",
   },
 ];
@@ -104,7 +114,7 @@ const CERTS = [
     icon: "code",
     title: "WordPress Development Bootcamp",
     sub: "by Special Skill Indonesia and awarded as best student (ranked top 3) for outstanding performance throughout the bootcamp.",
-    logo: "src/assets/images/AboutMe/specialskills.webp",
+    logo: specialskillsLogo,
     logoAlt: "Special Skill Indonesia",
     certUrl: "https://drive.google.com/file/d/1vhrpGRJbvhtLgNS4t4Hr5rIhM3QiGAvB/view?usp=sharing",
   },
@@ -112,7 +122,7 @@ const CERTS = [
     icon: "code",
     title: "Web Development 15.0",
     sub: "by Dibimbing",
-    logo: "src/assets/images/AboutMe/dibimbing.webp",
+    logo: dibimbingLogo,
     logoAlt: "Dibimbing",
     certUrl: "https://drive.google.com/file/d/1H4GtuKaFx1ILXrVsCDG3389NllOFUjp8/view?usp=sharing",
   },
@@ -120,7 +130,7 @@ const CERTS = [
     icon: "code",
     title: "Intro to Software Engineering",
     sub: "by RevoU",
-    logo: "src/assets/images/AboutMe/revoU.webp",
+    logo: revouLogo,
     logoAlt: "RevoU",
     certUrl: "https://drive.google.com/file/d/1m5H5JUfuS46qf18EXv3tddqzlnDx3zzO/view?usp=sharing",
   },
@@ -128,7 +138,7 @@ const CERTS = [
     icon: "code",
     title: "Assistant Web Developer (Digital Talent Academy)",
     sub: "by Digital Talent Scholarship (KOMDIGI)",
-    logo: "src/assets/images/AboutMe/digitalent.webp",
+    logo: digitalentLogo,
     logoAlt: "Digital Talent Scholarship",
     certUrl: "https://drive.google.com/file/d/10U5zyKxAty1zyZDMVkhXdjwfyewrZymU/view?usp=sharing",
   },
@@ -136,7 +146,7 @@ const CERTS = [
     icon: "code",
     title: "#JuaraVibeCoding Participant",
     sub: "by GDG Live Indonesia and recognized as a Twibbon Challenge winner",
-    logo: "src/assets/images/AboutMe/googledevelopers.webp",
+    logo: googledevelopersLogo,
     logoAlt: "GDG Live Indonesia",
     certUrl: "https://drive.google.com/file/d/1uio9pDGYlkZKsmstdu1BKiizOIso2PMB/view?usp=sharing",
   },
