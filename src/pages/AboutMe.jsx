@@ -14,6 +14,7 @@ import dibimbingLogo from "../assets/images/AboutMe/dibimbing.webp";
 import revouLogo from "../assets/images/AboutMe/revou.webp";
 import digitalentLogo from "../assets/images/AboutMe/digitalent.webp";
 import googledevelopersLogo from "../assets/images/AboutMe/googledevelopers.webp";
+import laplaceLogo from "../assets/images/AboutMe/laplace.webp";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 
@@ -32,6 +33,15 @@ const RESUME_URL = "/webdev-resume.pdf";
 //   tampilan tetap rapi walau belum ada asetnya.
 
 const CAREER = [
+  {
+    period: "AUG 2026 - Present",
+    active: true,
+    title: "Camera Assistant",
+    place: "Laplace Visual · Freelance",
+    desc: "Assisted with camera operations, managed lighting setups, and periodically served as a photographer during shoots.",
+    logo: laplaceLogo,
+    logoAlt: "Laplace Visual",
+  },
   {
     period: "JUN 2025 - Present",
     active: true,
