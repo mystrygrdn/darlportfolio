@@ -15,6 +15,7 @@ import revouLogo from "../assets/images/AboutMe/revou.webp";
 import digitalentLogo from "../assets/images/AboutMe/digitalent.webp";
 import googledevelopersLogo from "../assets/images/AboutMe/googledevelopers.webp";
 import laplaceLogo from "../assets/images/AboutMe/laplace.webp";
+import bgtkLogo from "../assets/images/AboutMe/bgtk.webp";
 
 // ── DATA ────────────────────────────────────────────────────────────────────
 
@@ -33,6 +34,15 @@ const RESUME_URL = "/webdev-resume.pdf";
 //   tampilan tetap rapi walau belum ada asetnya.
 
 const CAREER = [
+  {
+    period: "SEPT 2026 - Present",
+    active: true,
+    title: "Web Developer Intern (MagangHub)",
+    place: "Balai Guru dan Tenaga Kependidikan (BGTK) · Internship",
+    desc: "Developed and maintained web applications, collaborated with cross-functional teams, and contributed to the improvement of user experience.",
+    logo: bgtkLogo,
+    logoAlt: "Balai Guru dan Tenaga Kependidikan",
+  },
   {
     period: "AUG 2026 - Present",
     active: true,
